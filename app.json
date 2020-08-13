@@ -1,18 +1,31 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/location/index",
+    "pages/tools/index",
+    "pages/about/community",
+    "pages/messages/index",
+    "pages/tools/express"
   ],
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "便民信息"
-    }, {
-      "pagePath": "pages/index/index",
-      "text": "便民工具"
-    }, {
-      "pagePath": "pages/index/index",
-      "text": "小区概况"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/tools/index",
+        "text": "便民工具"
+      },
+      {
+        "pagePath": "pages/messages/index",
+        "text": "便民信息"
+      },
+      {
+        "pagePath": "pages/about/community",
+        "text": "小区概况"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于为您定位当前小区"
+    }
   },
   "networkTimeout": {
     "request": 10000,
@@ -22,7 +35,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "社区生活小助手",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
