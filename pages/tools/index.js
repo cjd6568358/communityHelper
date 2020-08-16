@@ -21,7 +21,14 @@ Page({
   onReady: function () {
 
   },
-
+  routerTo(e) {
+    console.log(e)
+    if (e.target.dataset.key === "express") {
+      wx.navigateTo({
+        url: '/pages/tools/express',
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */

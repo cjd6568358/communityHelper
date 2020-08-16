@@ -9,7 +9,7 @@ scroll-view {
 
 page {
   position: absolute;
-  padding: 48rpx;
+  padding: 6vw;
   top: 0;
   bottom: 0;
   left: 0;

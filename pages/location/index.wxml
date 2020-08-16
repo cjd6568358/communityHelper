@@ -1,5 +1,5 @@
 <!--pages/location/index.wxml-->
 <view class="title">请选择您所在的小区</view>
 <view class="community_list">
-  <view class="item" wx:for="{{communityList}}">{{item}}</view>
+  <view wx:key="item" class="item" wx:for="{{communityList}}">{{item}}</view>
 </view>
