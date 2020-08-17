@@ -1,2 +1,3 @@
 <!--pages/tools/express.wxml-->
-<text>pages/tools/express.wxml</text>
+<input class="express-input" value="{{expressValue}}" bindinput="bindInputChange" auto-focus placeholder="请输入快递单号" />
+<button class="express-search" bindtap="onSearch" type="primary">查询</button>

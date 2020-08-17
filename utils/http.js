@@ -5,13 +5,14 @@ let baseUrl = 'https://cjd6568358.3322.org:6706/api/';
 methods.forEach((method) => {
   request[method] = (config) => {
     return new Promise((resolve, reject) => {
-      let { data: postData = {}, url } = config;
+      let { data: postData = {}, url, ...others } = config;
       let isAbsoluteUrl = url.indexOf("//") >= 0;
       url = isAbsoluteUrl ? url : `${baseUrl}${url}`;
       let defaultConfig = {
         url,
         data: '',
         method,
+        ...others,
         dataType: 'json',
         responseType: 'text',
         success: (res) => {
