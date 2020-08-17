@@ -12,7 +12,6 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
-		"nodeModules": false,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
@@ -27,8 +26,9 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
-		"userConfirmedUseCompilerModuleSwitch": false
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"nodeModules": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.1",

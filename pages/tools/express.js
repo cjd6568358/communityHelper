@@ -36,23 +36,15 @@ Page({
         http.post({
           url: 'https://m.kuaidi100.com/apicenter/kdquerytools.do?method=autoComNum&text=' + value,
         }).then(result => {
-          wx.request({
-            method: 'post',
-            url: 'https://m.kuaidi100.com/query',
+          http.post({
+            url: 'community/express',
             data: {
               postid: value,
               type: result.auto[0].comCode,
-              platform: 'MWWW',
-              temp: '0.+16位随机数字',
-            },
-            header: {
-              cookie,
-              'Referer': 'https://m.kuaidi100.com/result.jsp?nu=' + value,
-              'content-type': 'application/x-www-form-urlencoded'
-            },
-            success: (res) => {
-              console.log(cookie, result, res)
+              cookie: cookie
             }
+          }).then(result => {
+
           })
         })
       },
