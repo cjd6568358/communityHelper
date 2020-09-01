@@ -1,1 +1,33 @@
-/* pages/messages/index.wxss */
+page {
+  padding: 0;
+}
+
+page .swiper-section,
+page .tool-section,
+page .info-section {
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+
+page .tool-section,
+page .info-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4vw 5vw;
+}
+
+page .tool-section .item,
+page .info-section .item {
+  width: 28vw;
+  text-align: center;
+  margin-right: 4vw;
+  margin-top: 4vw;
+  padding: 20rpx;
+  border: 1rpx solid #eee;
+  border-radius: 10rpx;
+}
+
+page .tool-section .item:nth-child(3n),
+page .info-section .item:nth-child(3n) {
+  margin-right: 0;
+}

@@ -1,0 +1,30 @@
+/* components/subTitle/index.wxss */
+
+:host {
+  display: block;
+}
+
+.sub-title {
+  background-color: #fff;
+  padding: 24rpx 30rpx 10rpx;
+}
+
+.title {
+  display: inline-block;
+  font-size: 32rpx;
+  line-height: 45rpx;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 6rpx;
+  height: 12rpx;
+  background: linear-gradient(145deg, #39bfff 0%, #2b91fd 100%);
+  opacity: 0.4;
+  z-index: 0;
+}

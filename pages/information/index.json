@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "sub-title": "../../components/subTitle"
+  }
 }

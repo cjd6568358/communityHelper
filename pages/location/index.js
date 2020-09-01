@@ -1,14 +1,15 @@
 // pages/location/index.js
-import { QQMapSDK, getCurrCommunityName } from '../../utils/util'
+import { getGlobalConfig } from '../../utils/api'
+const myApp = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    communityList: ["台湾城小区"]
+    communityList: []
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -20,7 +21,24 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    let currCommunity = wx.getStorageSync('currCommunity')
+    getGlobalConfig().then(config => {
+      if (config && currCommunity && config[currCommunity]) {
+        myApp.globalData.communityInfo = config[currCommunity]
+        wx.switchTab({
+          url: '/pages/information/index',
+        })
+      } else if (config) {
+        this.setData({
+          communityList: Object.keys(config),
+          globalConfig: config
+        })
+      }
+    })
+  },
+  itemClick({ currentTarget: { dataset: { item } } }) {
+    wx.setStorageSync('currCommunity', item)
+    myApp.globalData.communityInfo = this.data.globalConfig[item]
     wx.switchTab({
       url: '/pages/information/index',
     })

@@ -1,0 +1,2 @@
+<!--pages/tools/richText.wxml-->
+<rich-text nodes="{{content}}"></rich-text>

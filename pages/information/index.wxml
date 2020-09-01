@@ -1,9 +1,23 @@
-<view class="swiper-section">
-	<swiper wx:if="{{}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-		<block wx:for="{{background}}" wx:key="*this">
+<view class="swiper-section" wx:if="{{banner.length}}">
+	<swiper indicator-dots="{{true}}" autoplay="{{true}}">
+		<block wx:for="{{banner}}" wx:key="*this">
 			<swiper-item>
-				<view class="swiper-item {{item}}"></view>
+				<view class="swiper-item">
+					<image src="{{item}}" />
+				</view>
 			</swiper-item>
 		</block>
 	</swiper>
 </view>
+<block wx:if="{{tool.length}}">
+	<sub-title>便民工具</sub-title>
+	<view class="tool-section">
+		<view class="item" wx:for="{{tool}}" bindtap="itemClick" data-item="{{item}}" wx:key="name">{{item.name}}</view>
+	</view>
+</block>
+<block wx:if="{{info.length}}">
+	<sub-title>常用电话</sub-title>
+	<view class="info-section">
+		<view class="item" wx:for="{{info}}" bindtap="itemClick" data-item="{{item}}" wx:key="name">{{item.name}}</view>
+	</view>
+</block>

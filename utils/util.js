@@ -1,4 +1,4 @@
-import { getGlobalConfig, code2Session } from './api.js';
+import { getGlobalConfig, code2Session, getPageContent } from './api.js';
 import QQMapWX from '../libs/qqmap-wx-jssdk.min.js'
 const QQMapSDK = new QQMapWX({
   key: 'VCTBZ-BJ33U-POPVX-BI4XI-VZHPS-72FE7'
@@ -126,7 +126,7 @@ const getOpenId = () => {
 
 const getInitData = () => {
   return new Promise((resolve, reject) => {
-    Promise.all([getOpenId(), getGlobalConfig()]).then(([openid, { statusCode, statusMsg, data: globalConfig }]) => {
+    Promise.all([getOpenId(), getGlobalConfig()]).then(([openid, globalConfig]) => {
       if (statusCode == 1) {
         resolve({
           openid,
@@ -163,6 +163,63 @@ const getCurrCommunityName = () => {
   })
 }
 
+const takeASTEngine = (item) => {
+  switch (item.type) {
+    case 'tel':
+      if (Array.isArray(item.value)) {
+        wx.navigateTo({
+          url: '/pages/tools/children?title=' + item.name,
+          events: {
+          },
+          success: function (res) {
+            // 通过eventChannel向被打开页面传送数据
+            res.eventChannel.emit('content', item.value)
+            wx.hideLoading({
+              success: (res) => { },
+            })
+          }
+        })
+      } else {
+        wx.makePhoneCall({
+          phoneNumber: item.value,
+        });
+      }
+      break;
+    case 'miniprogram':
+      wx.navigateToMiniProgram({
+        appId: item.value,
+      });
+      break;
+    case 'ticket':
+
+      break;
+    case 'broadcast':
+
+      break;
+    case 'url':
+      wx.showLoading({
+        title: '加载中',
+      })
+      getPageContent(item.value, `.rich_media_content{html($)}`).then(({ data: content }) => {
+        wx.navigateTo({
+          url: '/pages/tools/richText?title=' + item.name,
+          events: {
+          },
+          success: function (res) {
+            // 通过eventChannel向被打开页面传送数据
+            res.eventChannel.emit('richTextContent', content)
+            wx.hideLoading({
+              success: (res) => { },
+            })
+          }
+        })
+      })
+      break;
+    default:
+
+  }
+}
+
 module.exports = {
   formatTime,
   getTotalDaysArr,
@@ -173,6 +230,7 @@ module.exports = {
   getOpenId,
   getInitData,
   arrayBuffer2String,
+  takeASTEngine,
   QQMapSDK,
   getCurrCommunityName
 }

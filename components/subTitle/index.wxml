@@ -1,0 +1,7 @@
+<!--components/subTitle/index.wxml-->
+<view class='sub-title'>
+  <view class='title'>
+    <slot></slot>
+    <view class='bg'></view>
+  </view>
+</view>

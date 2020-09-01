@@ -1,4 +1,4 @@
-// pages/messages/index.js
+// pages/tools/children.js
 import { takeASTEngine } from '../../utils/util'
 const myApp = getApp()
 Page({
@@ -7,25 +7,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-    banner: [],
-    tool: [],
-    info: []
+    list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({
+      title: options.title,
+    })
+    //获取事件对象
+    const eventChannel = this.getOpenerEventChannel()
+    // 监听acceptData事件，获取上一页面通过eventChannel传送到当前页面的数据
+    eventChannel.on('content', (content) => {
+      this.setData({
+        list: content
+      })
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.setData(myApp.globalData.communityInfo['information'])
+
   },
   itemClick({ currentTarget: { dataset: { item } } }) {
+    console.log(item)
     takeASTEngine(item)
   },
   /**

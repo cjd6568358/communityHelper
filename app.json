@@ -5,9 +5,12 @@
     "pages/about/community",
     "pages/information/index",
     "pages/tools/express",
-    "pages/activity/index"
+    "pages/activity/index",
+    "pages/tools/richText",
+    "pages/tools/children"
   ],
   "tabBar": {
+    "selectedColor": "#2b91fd",
     "list": [
       {
         "pagePath": "pages/information/index",
@@ -31,9 +34,9 @@
   "debug": true,
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#2b91fd",
     "navigationBarTitleText": "社区生活小助手",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

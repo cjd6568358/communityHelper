@@ -38,7 +38,7 @@ App({
         }
       }
     })
-    
+
     const updateManager = wx.getUpdateManager()
 
     updateManager.onCheckForUpdate(function (res) {
@@ -67,6 +67,7 @@ App({
   globalData: {
     version: '0.0.1',
     openid: '',
-    userInfo: null
+    userInfo: null,
+    communityInfo: null
   }
 })
