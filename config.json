@@ -1,0 +1,21 @@
+{
+    "巨龙台湾城": {
+        "information": {
+            "banner": [],
+            "tool": [
+                {
+                    "name": "快递查询",
+                    "type": "miniprogram",
+                    "value": "wx6885acbedba59c14"
+                },
+                {
+                    "name": "物业报修",
+                    "type": "tel",
+                    "value": "18016249325"
+                }
+            ]
+        },
+        "community": [],
+        "activity": []
+    }
+}

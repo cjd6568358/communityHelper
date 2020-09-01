@@ -21,7 +21,7 @@ Page({
    */
   onReady: function () {
     wx.switchTab({
-      url: '/pages/tools/index',
+      url: '/pages/information/index',
     })
   },
   /**

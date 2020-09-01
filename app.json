@@ -3,17 +3,14 @@
     "pages/location/index",
     "pages/tools/index",
     "pages/about/community",
-    "pages/messages/index",
-    "pages/tools/express"
+    "pages/information/index",
+    "pages/tools/express",
+    "pages/activity/index"
   ],
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/tools/index",
-        "text": "便民工具"
-      },
-      {
-        "pagePath": "pages/messages/index",
+        "pagePath": "pages/information/index",
         "text": "便民信息"
       },
       {
