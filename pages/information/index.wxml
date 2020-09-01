@@ -1,2 +1,9 @@
-<!--pages/messages/index.wxml-->
-<text>pages/messages/index.wxml</text>
+<view class="swiper-section">
+	<swiper wx:if="{{}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+		<block wx:for="{{background}}" wx:key="*this">
+			<swiper-item>
+				<view class="swiper-item {{item}}"></view>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
