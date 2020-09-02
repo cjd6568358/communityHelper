@@ -1,6 +1,18 @@
 <!--pages/children/map.wxml-->
-<map setting="{{mapSetting}}" bindmarkertap="markertap" bindregionchange="regionchange"></map>
+<map 
+scale="13"
+longitude="{{longitude}}" 
+latitude="{{latitude}}"
+markers="{{markers}}" 
+show-location
+show-compass
+show-scale
+></map>
 <view class="field-section">
+	<!-- <view class="item">
+		<view class="label">店名:</view>
+		<view class="value">{{name}}</view>
+	</view> -->
 	<view wx:for="{{fieldList}}" wx:key="name" class="item" bindtap="itemClick" data-item="{{item}}">
 		<view class="label">{{item.name}}:</view>
 		<view class="value">{{item.value}}</view>
