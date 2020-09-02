@@ -1,5 +1,4 @@
 import http from './http.js'
-import { sendMsg, showToast } from './util.js'
 
 const url = `communityHelper`
 
@@ -26,8 +25,7 @@ let getGlobalConfig = () => {
         console.log('globalConfig is cache')
         reslove(globalConfig)
       } else {
-        showToast('globalConfig初始化异常')
-        sendMsg('globalConfig初始化异常')
+        console.warn('globalConfig初始化异常')
         reject(null)
       }
     })
@@ -40,16 +38,14 @@ let getPageContent = (url, selector) => {
     data: {
       httpConfig: {
         url,
-        method: "get",
-        // responseType: "arraybuffer"
+        method: "get"
       },
-      selector,
-      // encoding: "utf8",
+      selector
     }
   })
 }
 
-exports = module.exports = {
+export {
   getGlobalData,
   code2Session,
   getGlobalConfig,

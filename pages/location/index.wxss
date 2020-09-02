@@ -21,7 +21,7 @@ page .community_list .item {
   padding: 10rpx 40rpx;
   border-radius: 8rpx;
   border: 2rpx solid #eee;
-  margin-bottom: 10rpx;
+  margin-bottom: 40rpx;
   font-size: 30rpx;
   font-weight: 500;
 }

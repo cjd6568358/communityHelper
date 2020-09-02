@@ -1,0 +1,8 @@
+<!--pages/children/map.wxml-->
+<map setting="{{mapSetting}}" bindmarkertap="markertap" bindregionchange="regionchange"></map>
+<view class="field-section">
+	<view wx:for="{{fieldList}}" wx:key="name" class="item" bindtap="itemClick" data-item="{{item}}">
+		<view class="label">{{item.name}}:</view>
+		<view class="value">{{item.value}}</view>
+	</view>
+</view>

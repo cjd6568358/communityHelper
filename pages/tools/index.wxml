@@ -1,4 +1,0 @@
-<!--pages/tools.wxml-->
-<view class="section" data-key="express" bindtap="routerTo">
-  查快递
-</view>

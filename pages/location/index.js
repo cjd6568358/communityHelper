@@ -1,5 +1,6 @@
 // pages/location/index.js
 import { getGlobalConfig } from '../../utils/api'
+import { showToast, sendMsg } from '../../utils/util'
 const myApp = getApp()
 Page({
 
@@ -34,6 +35,9 @@ Page({
           globalConfig: config
         })
       }
+    }).catch(e => {
+      showToast('globalConfig初始化异常')
+      sendMsg('globalConfig初始化异常', JSON.stringify(e))
     })
   },
   itemClick({ currentTarget: { dataset: { item } } }) {

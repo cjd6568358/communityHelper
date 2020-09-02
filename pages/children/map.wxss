@@ -1,0 +1,26 @@
+page {
+  padding: 0;
+}
+
+page map {
+  width: 100%;
+  height: 40vh;
+}
+
+page .field-section {
+  margin-top: 30rpx;
+}
+
+page .field-section .item {
+  background-color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 40rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+page .field-section .item:last-child {
+  border-bottom: 0;
+}

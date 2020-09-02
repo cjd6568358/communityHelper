@@ -168,7 +168,7 @@ const takeASTEngine = (item) => {
     case 'tel':
       if (Array.isArray(item.value)) {
         wx.navigateTo({
-          url: '/pages/tools/children?title=' + item.name,
+          url: '/pages/children/default?title=' + item.name,
           events: {
           },
           success: function (res) {
@@ -190,19 +190,33 @@ const takeASTEngine = (item) => {
         appId: item.value,
       });
       break;
+    case 'map':
+      let url = '/pages/children/map?title=' + item.name
+      if (Array.isArray(item.value)) {
+        url = '/pages/children/default?title=' + item.name
+      }
+      wx.navigateTo({
+        url,
+        events: {
+        },
+        success: function (res) {
+          // 通过eventChannel向被打开页面传送数据
+          res.eventChannel.emit('content', item.value)
+          wx.hideLoading({
+            success: (res) => { },
+          })
+        }
+      })
+      break;
     case 'ticket':
-
-      break;
     case 'broadcast':
-
-      break;
     case 'url':
       wx.showLoading({
         title: '加载中',
-      })
+      });
       getPageContent(item.value, `.rich_media_content{html($)}`).then(({ data: content }) => {
         wx.navigateTo({
-          url: '/pages/tools/richText?title=' + item.name,
+          url: '/pages/children/richText?title=' + item.name,
           events: {
           },
           success: function (res) {
@@ -220,7 +234,7 @@ const takeASTEngine = (item) => {
   }
 }
 
-module.exports = {
+export {
   formatTime,
   getTotalDaysArr,
   calculatGUID,
