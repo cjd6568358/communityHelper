@@ -201,7 +201,7 @@ const takeASTEngine = (item) => {
         },
         success: function (res) {
           // 通过eventChannel向被打开页面传送数据
-          res.eventChannel.emit('content', item.value)
+          res.eventChannel.emit('content', item.value || item)
           wx.hideLoading({
             success: (res) => { },
           })
