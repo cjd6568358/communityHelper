@@ -22,6 +22,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    wx.showLoading({
+      title: '加载中...',
+    })
     let currCommunity = wx.getStorageSync('currCommunity')
     getGlobalConfig().then(config => {
       if (config && currCommunity && config[currCommunity]) {
@@ -35,7 +38,13 @@ Page({
           globalConfig: config
         })
       }
+      wx.hideLoading({
+        success: (res) => {},
+      })
     }).catch(e => {
+      wx.hideLoading({
+        success: (res) => {},
+      })
       showToast('globalConfig初始化异常')
       sendMsg('globalConfig初始化异常', JSON.stringify(e))
     })

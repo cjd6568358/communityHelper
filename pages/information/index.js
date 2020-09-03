@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    currCommunity: wx.getStorageSync('currCommunity'),
     banner: [],
     tool: [],
     info: []

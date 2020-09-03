@@ -1,4 +1,7 @@
 <!--pages/about/community.wxml-->
+<page-meta>
+	<navigation-bar title="{{currCommunity}}" />
+</page-meta>
 <view class="section">
-	<view class="item" wx:for="{{list}}" bindtap="itemClick" data-item="{{item}}" wx:key="name">{{item.name}}</view>
+	<view class="item" wx:for="{{list}}" bindtap="itemClick" data-item="{{item}}" wx:key="name">{{item.name}}({{item.date}})</view>
 </view>

@@ -1,4 +1,5 @@
 page {
+  background-color: #fff;
   padding: 0;
 
   .section {
@@ -6,20 +7,13 @@ page {
     background-color: #fff;
     display: flex;
     flex-wrap: wrap;
-    padding: 0 4vw 5vw;
+    padding: 4vw 5vw;
 
     .item {
-      width: 28vw;
-      text-align: center;
-      margin-right: 4vw;
-      margin-top: 4vw;
+      width: 100%;
+      margin-bottom: 2vw;
       padding: 20rpx;
-      border: 1rpx solid #eee;
-      border-radius: 10rpx;
-
-      &:nth-child(3n) {
-        margin-right: 0;
-      }
+      border-bottom: 1rpx solid #eee;
     }
   }
 }

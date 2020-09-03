@@ -8,16 +8,19 @@ page {
 
   .field-section {
     margin-top: 30rpx;
-    
+
 
     .item {
       background-color: #fff;
-      height: 80rpx;
-      line-height: 80rpx;
-      padding: 0 40rpx;
+      padding: 20rpx 40rpx;
       border-bottom: 1rpx solid #eee;
       display: flex;
       justify-content: space-between;
+
+      .label {
+        flex-shrink: 0;
+        margin-right: 40rpx;
+      }
 
       &:last-child {
         border-bottom: 0;
