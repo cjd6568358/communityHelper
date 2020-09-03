@@ -2,7 +2,7 @@
   "pages": [
     "pages/location/index",
     "pages/information/index",
-    "pages/community/index",
+    "pages/news/index",
     "pages/activity/index",
     "pages/children/richText",
     "pages/children/default",
@@ -16,8 +16,8 @@
         "text": "便民信息"
       },
       {
-        "pagePath": "pages/community/index",
-        "text": "小区概况"
+        "pagePath": "pages/news/index",
+        "text": "小区新闻"
       }
     ]
   },
