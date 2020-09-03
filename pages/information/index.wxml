@@ -15,12 +15,16 @@
 <block wx:if="{{tool.length}}">
 	<sub-title>便民工具</sub-title>
 	<view class="tool-section">
-		<view class="item" wx:for="{{tool}}" bindtap="itemClick" data-item="{{item}}" wx:key="name">{{item.name}}</view>
+		<view class="item" wx:for="{{tool}}" bindtap="itemClick" data-item="{{item}}" wx:key="name">{{item.name}}
+			<block wx:if="{{item.type === 'tel' && item.value === ''}}">(暂缺,点击上报)</block>
+		</view>
 	</view>
 </block>
 <block wx:if="{{info.length}}">
 	<sub-title>常用电话</sub-title>
 	<view class="info-section">
-		<view class="item" wx:for="{{info}}" bindtap="itemClick" data-item="{{item}}" wx:key="name">{{item.name}}</view>
+		<view class="item" wx:for="{{info}}" bindtap="itemClick" data-item="{{item}}" wx:key="name">{{item.name}}
+			<block wx:if="{{item.type === 'tel' && item.value === ''}}">(暂缺,点击上报)</block>
+		</view>
 	</view>
 </block>

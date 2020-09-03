@@ -6,7 +6,8 @@
     "pages/activity/index",
     "pages/children/richText",
     "pages/children/default",
-    "pages/children/map"
+    "pages/children/map",
+    "pages/about/feedback"
   ],
   "tabBar": {
     "selectedColor": "#2b91fd",
@@ -38,5 +39,8 @@
     "navigationBarTextStyle": "white"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
 }

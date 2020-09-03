@@ -15,7 +15,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
     //获取事件对象
     const eventChannel = this.getOpenerEventChannel()
     // 监听acceptData事件，获取上一页面通过eventChannel传送到当前页面的数据

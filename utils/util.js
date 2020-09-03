@@ -41,7 +41,7 @@ const calculatGUID = () => {
   return guid;
 }
 
-const sendMsg = (title, content) => {
+const sendMsg = (title, content, type = "") => {
   if (typeof content == "object") {
     content = JSON.stringify(content)
   }
@@ -51,7 +51,8 @@ const sendMsg = (title, content) => {
     dataType: 'json',
     responseType: 'text',
     data: {
-      title, content
+      title, content,
+      type
     }
   })
 }
@@ -174,6 +175,17 @@ const takeASTEngine = (item) => {
           success: function (res) {
             // 通过eventChannel向被打开页面传送数据
             res.eventChannel.emit('content', item.value)
+            wx.hideLoading({
+              success: (res) => { },
+            })
+          }
+        })
+      } else if (!item.value) {
+        wx.navigateTo({
+          url: '/pages/about/feedback',
+          success: function (res) {
+            // 通过eventChannel向被打开页面传送数据
+            res.eventChannel.emit('content', { title: `我要上报[${item.name}]的联系方式` })
             wx.hideLoading({
               success: (res) => { },
             })
