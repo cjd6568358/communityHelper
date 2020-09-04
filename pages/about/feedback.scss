@@ -32,5 +32,10 @@ page {
 
   button {
     margin-top: 30rpx;
+
+    &.button-hover[type='primary'] {
+      background-color: #2b91fd;
+    }
+
   }
 }
