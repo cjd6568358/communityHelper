@@ -29,3 +29,7 @@ page .page_section .input_wrap textarea {
 page button {
   margin-top: 30rpx;
 }
+
+page button.button-hover[type='primary'] {
+  background-color: #2b91fd;
+}

@@ -42,7 +42,12 @@ Page({
       return
     }
     sendMsg(title, content, "sms")
-    showToast('提交成功')
+    showToast('提交成功,管理员将尽快审核补全')
+    setTimeout(() => {
+      wx.navigateBack({
+        delta: 1,
+      })
+    }, 1000)
   },
   bindInputChange({ currentTarget: { dataset: { key } }, detail: { value } }) {
     this.setData({
