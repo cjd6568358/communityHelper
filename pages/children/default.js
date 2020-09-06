@@ -15,17 +15,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: options.title,
-    })
-    //获取事件对象
-    const eventChannel = this.getOpenerEventChannel()
-    // 监听acceptData事件，获取上一页面通过eventChannel传送到当前页面的数据
-    eventChannel.on('content', (content) => {
-      this.setData({
-        list: content
+    if (options.extraData) {
+      let extraData = JSON.parse(options.extraData)
+      if (extraData.title) {
+        wx.setNavigationBarTitle({
+          title: extraData.title,
+        })
+        this.setData(extraData)
+      }
+    } else {
+      wx.setNavigationBarTitle({
+        title: options.title,
       })
-    })
+      //获取事件对象
+      const eventChannel = this.getOpenerEventChannel()
+      // 监听acceptData事件，获取上一页面通过eventChannel传送到当前页面的数据
+      eventChannel.on('content', (content) => {
+        this.setData({
+          title: options.title,
+          list: content
+        })
+      })
+    }
   },
 
   /**
@@ -35,7 +46,6 @@ Page({
 
   },
   itemClick({ currentTarget: { dataset: { item } } }) {
-    console.log(item)
     takeASTEngine(item)
   },
   /**
@@ -77,6 +87,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      path: `/${this.route}?extraData=${JSON.stringify(this.data)}`
+    }
   }
 })

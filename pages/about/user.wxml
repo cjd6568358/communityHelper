@@ -1,0 +1,36 @@
+<!--pages/about/user.wxml-->
+<view class="user-info">
+	<view class="avatar">
+		<open-data type="userAvatarUrl"></open-data>
+	</view>
+	<view class="right">
+		<view class="nick-name">
+			<open-data type="userNickName"></open-data>
+		</view>
+		<view class="gender">
+			性别：
+			<open-data type="userGender"></open-data>
+		</view>
+	</view>
+</view>
+
+<view class="menu-section">
+	<view class="item" bindtap="itemClick" data-key="feedback">
+		<view class="label">
+			<mp-icon extClass="label_icon_extClass" size="{{18}}" color="#999" icon="pencil"></mp-icon>
+			<text>意见反馈</text>
+		</view>
+		<view class="value">
+			<mp-icon extClass="value_icon_extClass" size="{{16}}" color="#999" icon="arrow"></mp-icon>
+		</view>
+	</view>
+	<view class="item">
+		<view class="label">
+			<mp-icon extClass="label_icon_extClass" size="{{18}}" color="#999" icon="info"></mp-icon>
+			<text>关于我们</text>
+		</view>
+		<view class="value">
+			<mp-icon extClass="value_icon_extClass" size="{{16}}" color="#999" icon="arrow"></mp-icon>
+		</view>
+	</view>
+</view>

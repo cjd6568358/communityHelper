@@ -6,8 +6,9 @@
     "pages/activity/index",
     "pages/children/richText",
     "pages/children/default",
-    "pages/children/map",
-    "pages/about/feedback"
+    "pages/children/media",
+    "pages/about/feedback",
+    "pages/about/user"
   ],
   "tabBar": {
     "selectedColor": "#2b91fd",
@@ -19,6 +20,10 @@
       {
         "pagePath": "pages/news/index",
         "text": "小区新闻"
+      },
+      {
+        "pagePath": "pages/about/user",
+        "text": "我的"
       }
     ]
   },

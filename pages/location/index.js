@@ -15,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.redirect = options.redirect
   },
 
   /**
@@ -30,7 +30,7 @@ Page({
       if (config && currCommunity && config[currCommunity]) {
         myApp.globalData.communityInfo = config[currCommunity]
         wx.switchTab({
-          url: '/pages/information/index',
+          url: this.redirect || '/pages/information/index',
         })
       } else if (config) {
         this.setData({
@@ -39,11 +39,11 @@ Page({
         })
       }
       wx.hideLoading({
-        success: (res) => {},
+        success: (res) => { },
       })
     }).catch(e => {
       wx.hideLoading({
-        success: (res) => {},
+        success: (res) => { },
       })
       showToast('globalConfig初始化异常')
       sendMsg('globalConfig初始化异常', JSON.stringify(e))
@@ -53,7 +53,7 @@ Page({
     wx.setStorageSync('currCommunity', item)
     myApp.globalData.communityInfo = this.data.globalConfig[item]
     wx.switchTab({
-      url: '/pages/information/index',
+      url: this.redirect || '/pages/information/index',
     })
   },
   /**

@@ -1,32 +1,32 @@
-// pages/messages/index.js
-import { takeASTEngine } from '../../utils/util'
-const myApp = getApp()
+// pages/about/user.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    currCommunity: wx.getStorageSync('currCommunity'),
-    banner: [],
-    tool: [],
-    info: []
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.setData(myApp.globalData.communityInfo['information'])
+
   },
-  itemClick({ currentTarget: { dataset: { item } } }) {
-    takeASTEngine(item)
+  itemClick({ currentTarget: { dataset: { key } } }) {
+    if (key === 'feedback') {
+      wx.navigateTo({
+        url: '/pages/about/feedback',
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面显示
@@ -67,8 +67,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    return {
-      path: `/pages/location/index?redirect=/${this.route}`
-    }
+
   }
 })

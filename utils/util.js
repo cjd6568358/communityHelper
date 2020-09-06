@@ -192,6 +192,7 @@ const takeASTEngine = (item) => {
           }
         })
       } else {
+        sendMsg(item.name || '未知埋点', item.value, 'sms')
         wx.makePhoneCall({
           phoneNumber: item.value,
         });
@@ -202,8 +203,8 @@ const takeASTEngine = (item) => {
         appId: item.value,
       });
       break;
-    case 'map':
-      let url = '/pages/children/map?title=' + item.name
+    case 'media':
+      let url = '/pages/children/media?title=' + item.name
       if (Array.isArray(item.value)) {
         url = '/pages/children/default?title=' + item.name
       }
