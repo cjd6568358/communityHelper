@@ -86,6 +86,20 @@ Page({
       })
     }
   },
+  openMap() {
+    let { longitude, latitude, title } = this.data
+    wx.openLocation({
+      latitude: +latitude,
+      longitude: +longitude,
+      name: title
+    })
+  },
+  previewImage({ currentTarget: { dataset: { urls, current } } }) {
+    wx.previewImage({
+      current: current, // 当前显示图片的http链接
+      urls: urls || [] // 需要预览的图片http链接列表
+    })
+  },
   markertap(e) {
     console.log(e.detail.markerId)
   },

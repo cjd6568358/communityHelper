@@ -1,27 +1,28 @@
 <!--pages/children/media.wxml-->
 <view class="field-section">
-	<block wx:for="{{fieldList}}" wx:key="name" data-item="{{item}}">
+	<block wx:for="{{fieldList}}" wx:key="name">
 		<view class="map-section" wx:if="{{item.type === 'map'}}">
 			<map scale="13" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" show-location show-compass show-scale></map>
+			<cover-view bindtap="openMap" class="map-nav">去这里</cover-view>
 		</view>
 		<view class="swiper-section" wx:if="{{item.type === 'banner'}}">
 			<swiper indicator-dots="{{true}}" autoplay="{{true}}">
 				<block wx:for="{{item.value}}" wx:for-item="image" wx:key="*this">
 					<swiper-item>
 						<view class="swiper-item">
-							<image src="{{image}}" />
+							<image show-menu-by-longpress bindtap="previewImage" data-urls="{{item.value}}" data-current="{{image}}" src="{{image}}" />
 						</view>
 					</swiper-item>
 				</block>
 			</swiper>
 		</view>
-		<view class="item-section" bindtap="itemClick" wx:if="{{item.type === 'tel' || item.type === 'text'}}">
+		<view class="item-section" bindtap="itemClick" data-item="{{item}}" wx:if="{{item.type === 'tel' || item.type === 'text'}}">
 			<view class="label">
 				<mp-icon extClass="labelIcon_extClass" wx:if="{{item.labelIcon}}" size="{{item.labelIcon.size||16}}" color="{{item.labelIcon.color||black}}" type="{{item.labelIcon.type||'outline'}}" icon="{{item.labelIcon.name}}"></mp-icon>
 				<text>{{item.name}}:</text>
 			</view>
 			<view class="value">
-				<text>{{item.value}}</text>
+				<text user-select>{{item.value}}</text>
 				<mp-icon extClass="valueIcon_extClass" wx:if="{{item.valueIcon}}" size="{{item.valueIcon.size||16}}" color="{{item.valueIcon.color||black}}" type="{{item.valueIcon.type||'outline'}}" icon="{{item.valueIcon.name}}"></mp-icon>
 			</view>
 		</view>
