@@ -31,7 +31,7 @@
 		"userConfirmedUseCompilerModuleSwitch": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.0",
+	"libVersion": "2.12.2",
 	"appid": "wxcb1dfa5e2636e12e",
 	"projectname": "communityHelper",
 	"debugOptions": {
