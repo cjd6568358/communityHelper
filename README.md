@@ -1,7 +1,6 @@
 # communityHelper
 社区生活小助手
 #TODO
-*  在建项目
 *  优惠活动
 *  小区闲置
 

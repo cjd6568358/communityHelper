@@ -169,7 +169,7 @@ const takeASTEngine = (item) => {
     case 'tel':
       if (Array.isArray(item.value)) {
         wx.navigateTo({
-          url: '/pages/children/default?title=' + item.name,
+          url: '/pages/template/default?title=' + item.name,
           events: {
           },
           success: function (res) {
@@ -204,9 +204,9 @@ const takeASTEngine = (item) => {
       });
       break;
     case 'media':
-      let url = '/pages/children/media?title=' + item.name
+      let url = '/pages/template/media?title=' + item.name
       if (Array.isArray(item.value)) {
-        url = '/pages/children/default?title=' + item.name
+        url = '/pages/template/default?title=' + item.name
       }
       wx.navigateTo({
         url,
@@ -229,7 +229,7 @@ const takeASTEngine = (item) => {
       });
       getPageContent(item.value, `.rich_media_content{html($)}`).then(({ data: content }) => {
         wx.navigateTo({
-          url: '/pages/children/richText?title=' + item.name,
+          url: '/pages/template/richText?title=' + item.name,
           events: {
           },
           success: function (res) {

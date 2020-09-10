@@ -1,4 +1,4 @@
-<!--pages/children/media.wxml-->
+<!--pages/template/media.wxml-->
 <view class="field-section">
 	<block wx:for="{{fieldList}}" wx:key="name">
 		<view class="map-section" wx:if="{{item.type === 'map'}}">

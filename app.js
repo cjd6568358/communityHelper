@@ -64,6 +64,11 @@ App({
     })
 
   },
+  onPageNotFound(res) {
+    wx.redirectTo({
+      url: '/pages/location/index'
+    })
+  },
   globalData: {
     version: '0.0.1',
     openid: '',

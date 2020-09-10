@@ -4,9 +4,9 @@
     "pages/information/index",
     "pages/news/index",
     "pages/activity/index",
-    "pages/children/richText",
-    "pages/children/default",
-    "pages/children/media",
+    "pages/template/richText",
+    "pages/template/default",
+    "pages/template/media",
     "pages/about/feedback",
     "pages/about/user"
   ],

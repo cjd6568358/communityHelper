@@ -1,4 +1,4 @@
-// pages/children/media.js
+// pages/template/media.js
 import { sendMsg } from '../../utils/util'
 Page({
 

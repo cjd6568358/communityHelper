@@ -1,4 +1,4 @@
-<!--pages/tools/children.wxml-->
+<!--pages/template/default.wxml-->
 <page-meta>
 	<navigation-bar title="{{currCommunity}}" />
 </page-meta>

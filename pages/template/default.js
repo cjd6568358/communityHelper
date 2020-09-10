@@ -1,4 +1,4 @@
-// pages/tools/children.js
+// pages/template/default.js
 import { takeASTEngine } from '../../utils/util'
 const myApp = getApp()
 Page({
