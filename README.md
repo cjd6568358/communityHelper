@@ -4,7 +4,6 @@
 *  在建项目
 *  优惠活动
 *  小区闲置
-*  优化富文本显示
 
 #腾讯地图appkey
 VCTBZ-BJ33U-POPVX-BI4XI-VZHPS-72FE7

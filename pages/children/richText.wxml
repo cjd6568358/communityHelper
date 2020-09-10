@@ -1,2 +1,3 @@
 <!--pages/tools/richText.wxml-->
-<rich-text nodes="{{content}}"></rich-text>
+<!-- <rich-text nodes="{{content}}"></rich-text> -->
+<parser selectable use-cache html="{{content}}" />

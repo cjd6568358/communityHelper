@@ -24,6 +24,15 @@
 			<mp-icon extClass="value_icon_extClass" size="{{16}}" color="#999" icon="arrow"></mp-icon>
 		</view>
 	</view>
+	<view class="item" bindtap="itemClick" data-key="switch">
+		<view class="label">
+			<mp-icon extClass="label_icon_extClass" size="{{18}}" color="#999" icon="setting"></mp-icon>
+			<text>切换社区</text>
+		</view>
+		<view class="value">
+			<mp-icon extClass="value_icon_extClass" size="{{16}}" color="#999" icon="arrow"></mp-icon>
+		</view>
+	</view>
 	<view class="item">
 		<view class="label">
 			<mp-icon extClass="label_icon_extClass" size="{{18}}" color="#999" icon="info"></mp-icon>

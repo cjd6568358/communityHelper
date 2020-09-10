@@ -26,6 +26,10 @@ Page({
       wx.navigateTo({
         url: '/pages/about/feedback',
       })
+    } else if (key === 'switch') {
+      wx.navigateTo({
+        url: '/pages/location/index?from=user',
+      })
     }
   },
   /**

@@ -16,6 +16,7 @@ Page({
    */
   onLoad: function (options) {
     this.redirect = options.redirect
+    this.from = options.from
   },
 
   /**
@@ -29,9 +30,16 @@ Page({
     getGlobalConfig().then(config => {
       if (config && currCommunity && config[currCommunity]) {
         myApp.globalData.communityInfo = config[currCommunity]
-        wx.switchTab({
-          url: this.redirect || '/pages/information/index',
-        })
+        if (!this.from) {
+          wx.switchTab({
+            url: this.redirect || '/pages/information/index',
+          })
+        } else {
+          this.setData({
+            communityList: Object.keys(config),
+            globalConfig: config
+          })
+        }
       } else if (config) {
         this.setData({
           communityList: Object.keys(config),
