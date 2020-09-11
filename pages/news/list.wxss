@@ -3,9 +3,11 @@ page {
 }
 
 page .header {
+  font-size: 30rpx;
+  font-weight: 500;
   padding: 30rpx 40rpx;
   background-color: #fff;
-  border: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
   margin-bottom: 30rpx;
 }
 

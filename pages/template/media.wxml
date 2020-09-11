@@ -19,7 +19,7 @@
 		<view class="item-section" bindtap="itemClick" data-item="{{item}}" wx:if="{{item.type === 'tel' || item.type === 'text'}}">
 			<view class="label">
 				<mp-icon extClass="labelIcon_extClass" wx:if="{{item.labelIcon}}" size="{{item.labelIcon.size||16}}" color="{{item.labelIcon.color||black}}" type="{{item.labelIcon.type||'outline'}}" icon="{{item.labelIcon.name}}"></mp-icon>
-				<text>{{item.name}}:</text>
+				<text>{{item.name}}</text>
 			</view>
 			<view class="value">
 				<text user-select>{{item.value}}</text>

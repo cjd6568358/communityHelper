@@ -1,0 +1,32 @@
+<!--pages/unused/list.wxml-->
+<wxs module="util">
+	var getTags = function(fieldList) {
+		return fieldList.filter(function(field) {
+			return field.tag
+		}).map(function(field) {
+			return field.value
+		})
+	};
+	var getBanner = function(fieldList) {
+		return fieldList.filter(function(field) {
+			return field.type === 'banner'
+		})[0].value[0]
+	};
+	module.exports = {
+		getTags: getTags,
+		getBanner: getBanner
+	}
+</wxs>
+<page-meta>
+	<navigation-bar title="{{currCommunity}}" />
+</page-meta>
+<view class="item" wx:for="{{list}}" bindtap="itemClick" data-item="{{item}}" wx:key="title">
+	<image src="{{util.getBanner(item.fieldList)}}"></image>
+	<view class="right">
+		<view class="title">{{item.name}}</view>
+		<view class="tags">
+			<view class="tag" wx:for="{{util.getTags(item.fieldList)}}" wx:for-item="tag" wx:key="*this">{{tag}}</view>
+		</view>
+		<view class="date">{{item.date}}</view>
+	</view>
+</view>

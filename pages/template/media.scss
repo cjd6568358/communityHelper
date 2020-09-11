@@ -6,7 +6,7 @@ page {
       position: relative;
       width: 100%;
       height: 40vh;
-      margin-bottom: 30rpx;
+      margin-bottom: 20rpx;
 
       map {
         width: 100%;
@@ -28,13 +28,14 @@ page {
     }
 
     .swiper-section {
-      margin-bottom: 30rpx;
+      margin-bottom: 20rpx;
 
       .swiper-item {
 
         image {
           width: 100%;
-          height: 280rpx;
+          height: 300rpx;
+          vertical-align: bottom;
         }
       }
     }
@@ -43,13 +44,25 @@ page {
       position: relative;
       background-color: #fff;
       padding: 20rpx 40rpx;
-      border-bottom: 1rpx solid #eee;
+      padding-left: 30rpx;
+
       display: flex;
       justify-content: space-between;
+
+      &::before {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 40rpx;
+        right: 0;
+        height: 1rpx;
+        border-bottom: 1rpx solid #eee;
+      }
 
       .label {
         flex-shrink: 0;
         margin-right: 40rpx;
+        color: #9a9a9a;
       }
 
       .value {
@@ -59,20 +72,23 @@ page {
       }
 
       &:last-child {
-        border-bottom: 0;
+        &::before {
+          border-bottom: 0;
+        }
       }
     }
   }
 }
 
 .labelIcon_extClass {
-  position: absolute;
-  left: 4px;
-  top: 14px;
+  margin-right: 16rpx;
+  // position: absolute;
+  // left: 4px;
+  // top: 14px;
 }
 
 .valueIcon_extClass {
-  position: absolute;
-  right: 4px;
-  top: calc(50% - 8px);
+  // position: absolute;
+  // right: 4px;
+  // top: calc(50% - 8px);
 }

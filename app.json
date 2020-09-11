@@ -2,13 +2,14 @@
   "pages": [
     "pages/location/index",
     "pages/information/index",
-    "pages/news/index",
+    "pages/news/list",
     "pages/activity/index",
     "pages/template/richText",
     "pages/template/default",
     "pages/template/media",
     "pages/about/feedback",
-    "pages/about/user"
+    "pages/about/user",
+    "pages/unused/list"
   ],
   "tabBar": {
     "selectedColor": "#2b91fd",
@@ -18,8 +19,12 @@
         "text": "便民信息"
       },
       {
-        "pagePath": "pages/news/index",
+        "pagePath": "pages/news/list",
         "text": "小区新闻"
+      },
+      {
+        "pagePath": "pages/unused/list",
+        "text": "小区闲置"
       },
       {
         "pagePath": "pages/about/user",

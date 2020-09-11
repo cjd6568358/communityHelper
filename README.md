@@ -2,7 +2,6 @@
 社区生活小助手
 #TODO
 *  优惠活动
-*  小区闲置
 
 #腾讯地图appkey
 VCTBZ-BJ33U-POPVX-BI4XI-VZHPS-72FE7
