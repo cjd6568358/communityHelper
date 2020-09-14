@@ -47,7 +47,7 @@ page {
       padding-left: 30rpx;
 
       display: flex;
-      justify-content: space-between;
+      line-height: 44rpx;
 
       &::before {
         position: absolute;
@@ -63,12 +63,21 @@ page {
         flex-shrink: 0;
         margin-right: 40rpx;
         color: #9a9a9a;
+        display: inline-flex;
+
+        mp-icon {
+          display: inline-flex;
+          height: 44rpx;
+          align-items: center;
+        }
+
+        text {
+          display: inline-flex;
+        }
       }
 
       .value {
-        text-align: right;
-        display: flex;
-        align-items: center;
+        margin-right: 20rpx;
       }
 
       &:last-child {
@@ -82,13 +91,12 @@ page {
 
 .labelIcon_extClass {
   margin-right: 16rpx;
-  // position: absolute;
-  // left: 4px;
-  // top: 14px;
 }
 
 .valueIcon_extClass {
-  // position: absolute;
-  // right: 4px;
+  position: absolute;
+  right: 20rpx;
+  top: 50%;
+  transform: translateY(-50%);
   // top: calc(50% - 8px);
 }

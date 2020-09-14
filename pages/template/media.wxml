@@ -18,12 +18,12 @@
 		</view>
 		<view class="item-section" bindtap="itemClick" data-item="{{item}}" wx:if="{{item.type === 'tel' || item.type === 'text'}}">
 			<view class="label">
-				<mp-icon extClass="labelIcon_extClass" wx:if="{{item.labelIcon}}" size="{{item.labelIcon.size||16}}" color="{{item.labelIcon.color||black}}" type="{{item.labelIcon.type||'outline'}}" icon="{{item.labelIcon.name}}"></mp-icon>
+				<mp-icon extClass="labelIcon_extClass" wx:if="{{item.labelIcon}}" size="{{18}}" color="{{item.labelIcon.color||black}}" type="{{item.labelIcon.type||'outline'}}" icon="{{item.labelIcon.name}}"></mp-icon>
 				<text>{{item.name}}</text>
 			</view>
 			<view class="value">
 				<text user-select>{{item.value}}</text>
-				<mp-icon extClass="valueIcon_extClass" wx:if="{{item.valueIcon}}" size="{{item.valueIcon.size||16}}" color="{{item.valueIcon.color||black}}" type="{{item.valueIcon.type||'outline'}}" icon="{{item.valueIcon.name}}"></mp-icon>
+				<mp-icon extClass="valueIcon_extClass" wx:if="{{item.valueIcon}}" size="{{14}}" color="{{item.valueIcon.color||black}}" type="{{item.valueIcon.type||'outline'}}" icon="{{item.valueIcon.name}}"></mp-icon>
 			</view>
 		</view>
 	</block>

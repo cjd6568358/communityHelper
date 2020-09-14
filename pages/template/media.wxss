@@ -43,7 +43,7 @@ page .field-section .item-section {
   padding: 20rpx 40rpx;
   padding-left: 30rpx;
   display: flex;
-  justify-content: space-between;
+  line-height: 44rpx;
 }
 
 page .field-section .item-section::before {
@@ -60,12 +60,21 @@ page .field-section .item-section .label {
   flex-shrink: 0;
   margin-right: 40rpx;
   color: #9a9a9a;
+  display: inline-flex;
+}
+
+page .field-section .item-section .label mp-icon {
+  display: inline-flex;
+  height: 44rpx;
+  align-items: center;
+}
+
+page .field-section .item-section .label text {
+  display: inline-flex;
 }
 
 page .field-section .item-section .value {
-  text-align: right;
-  display: flex;
-  align-items: center;
+  margin-right: 20rpx;
 }
 
 page .field-section .item-section:last-child::before {
@@ -74,4 +83,11 @@ page .field-section .item-section:last-child::before {
 
 .labelIcon_extClass {
   margin-right: 16rpx;
+}
+
+.valueIcon_extClass {
+  position: absolute;
+  right: 20rpx;
+  top: 50%;
+  transform: translateY(-50%);
 }
