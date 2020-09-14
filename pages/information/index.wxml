@@ -6,7 +6,7 @@
 		<block wx:for="{{banner}}" wx:key="*this">
 			<swiper-item>
 				<view class="swiper-item">
-					<image src="{{item}}" />
+					<image show-menu-by-longpress bindtap="previewImage" data-urls="{{banner}}" data-current="{{item}}" src="{{item}}" />
 				</view>
 			</swiper-item>
 		</block>

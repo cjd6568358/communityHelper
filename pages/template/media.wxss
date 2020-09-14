@@ -16,15 +16,15 @@ page .field-section .map-section map {
 
 page .field-section .map-section .map-nav {
   position: absolute;
-  right: 30rpx;
-  bottom: 20rpx;
+  right: 8rpx;
+  bottom: 6rpx;
   width: 160rpx;
   height: 60rpx;
   text-align: center;
   line-height: 60rpx;
-  background-color: #fff;
-  border: 1rpx solid #eee;
+  background-color: #2b91fd;
   border-radius: 30rpx;
+  color: #fff;
 }
 
 page .field-section .swiper-section {
