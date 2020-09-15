@@ -88,6 +88,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
+      title: this.data.title,
       path: `/${this.route}?extraData=${JSON.stringify(this.data)}`
     }
   }

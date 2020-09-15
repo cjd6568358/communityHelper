@@ -30,6 +30,18 @@ Page({
     console.log(item)
     takeASTEngine(item)
   },
+  bindPublish() {
+    wx.navigateTo({
+      url: '/pages/about/feedback',
+      success: function (res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('content', { title: `我有闲置物品要发布` })
+        wx.hideLoading({
+          success: (res) => { },
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

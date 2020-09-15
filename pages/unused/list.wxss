@@ -1,5 +1,4 @@
 page {
-  background-color: #fff;
   padding: 0;
 }
 
@@ -8,6 +7,11 @@ page .item {
   padding: 20rpx 30rpx;
   border-bottom: 1rpx solid #eee;
   display: flex;
+  background-color: #fff;
+}
+
+page .item:last-child {
+  border-bottom: none;
 }
 
 page .item image {
@@ -50,4 +54,21 @@ page .item .right .date {
   left: 0;
   font-size: 24rpx;
   opacity: 0.3;
+}
+
+page .publish {
+  position: absolute;
+  bottom: 60rpx;
+  right: 60rpx;
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 34rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #2b91fd;
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 51, 128, 0.4);
 }
