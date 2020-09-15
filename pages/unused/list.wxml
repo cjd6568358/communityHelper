@@ -30,4 +30,4 @@
 		<view class="date">{{item.date}}</view>
 	</view>
 </view>
-<view class="publish" bindtap="bindPublish"><text>我要</text> <text>发布</text></view>
+<!-- <view class="publish" bindtap="bindPublish"><text>我要</text><text>发布</text></view> -->
