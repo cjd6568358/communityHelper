@@ -1,15 +1,15 @@
 <!--pages/about/user.wxml-->
 <view class="user-info">
 	<view class="avatar">
-		<open-data type="userAvatarUrl"></open-data>
+		<open-data type="userAvatarUrl" lang="zh_CN"></open-data>
 	</view>
 	<view class="right">
 		<view class="nick-name">
-			<open-data type="userNickName"></open-data>
+			<open-data type="userNickName" lang="zh_CN"></open-data>
 		</view>
 		<view class="gender">
 			性别：
-			<open-data type="userGender"></open-data>
+			<open-data type="userGender" lang="zh_CN"></open-data>
 		</view>
 	</view>
 </view>
