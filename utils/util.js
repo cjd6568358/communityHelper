@@ -222,14 +222,25 @@ const takeASTEngine = (item) => {
       })
       break;
     case 'ticket':
+      wx.navigateTo({
+        url: `/pages/template/richText?title=${item.name}&feedback=${+!!item.feedback}`,
+        events: {
+        },
+        success: function (res) {
+          // 通过eventChannel向被打开页面传送数据
+          res.eventChannel.emit('richTextContent', item.value)
+        }
+      })
+      break;
     case 'broadcast':
     case 'url':
       wx.showLoading({
         title: '加载中',
       });
-      getPageContent(item.value, `.rich_media_content{html($)}`).then(({ data: content }) => {
+      let selector = item.selector || `.rich_media_content{html($)}`
+      getPageContent(item.value, selector).then(({ data: content }) => {
         wx.navigateTo({
-          url: '/pages/template/richText?title=' + item.name,
+          url: `/pages/template/richText?title=${item.name}&feedback=${+!!item.feedback}`,
           events: {
           },
           success: function (res) {

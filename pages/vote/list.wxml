@@ -1,0 +1,13 @@
+<!--pages/ticket/list.wxml-->
+<page-meta>
+	<navigation-bar title="{{currCommunity}}" />
+</page-meta>
+<view class="header">
+	{{currCommunity}}小区投票专区
+</view>
+<view class="section">
+	<view class="item" wx:for="{{list}}" bindtap="itemClick" data-item="{{item}}" wx:key="name">
+		<view class="title">{{item.name}}</view>
+		<view class="date">{{item.date}}</view>
+	</view>
+</view>

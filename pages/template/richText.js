@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    content: ''
+    content: '',
+    feedback: 0
   },
 
   /**
@@ -24,6 +25,9 @@ Page({
       wx.setNavigationBarTitle({
         title: options.title,
       })
+      this.setData({
+        feedback: +options.feedback
+      })
       //获取事件对象
       const eventChannel = this.getOpenerEventChannel()
       // 监听acceptData事件，获取上一页面通过eventChannel传送到当前页面的数据
@@ -35,7 +39,15 @@ Page({
       })
     }
   },
-
+  bindPublish() {
+    wx.navigateTo({
+      url: '/pages/about/feedback?type=ticket',
+      success: function (res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('content', { title: this.data.title })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

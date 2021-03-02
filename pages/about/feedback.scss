@@ -8,6 +8,30 @@ page {
       margin-bottom: 20rpx;
     }
 
+    radio-group {
+      display: flex;
+      align-items: center;
+
+      label {
+        margin-right: 20rpx;
+      }
+    }
+
+    .button-group {
+      display: inline-flex;
+      button {
+        margin-right: 30rpx;
+        display: inline-flex;
+        align-items: center;
+
+        mp-icon {
+          height: 25px;
+          display: inline-flex;
+        }
+      }
+    }
+
+
     .input_wrap {
       border-radius: 8rpx;
       border: 1rpx solid #eee;

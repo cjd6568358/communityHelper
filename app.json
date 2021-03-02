@@ -1,13 +1,14 @@
 {
   "pages": [
+    "pages/about/feedback",
     "pages/location/index",
     "pages/information/index",
+    "pages/ticket/list",
     "pages/news/list",
     "pages/activity/index",
     "pages/template/richText",
     "pages/template/default",
     "pages/template/media",
-    "pages/about/feedback",
     "pages/about/user",
     "pages/unused/list"
   ],
@@ -17,6 +18,10 @@
       {
         "pagePath": "pages/information/index",
         "text": "便民信息"
+      },
+      {
+        "pagePath": "pages/ticket/list",
+        "text": "意见征询"
       },
       {
         "pagePath": "pages/news/list",

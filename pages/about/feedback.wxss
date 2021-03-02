@@ -10,6 +10,30 @@ page .page_section .title {
   margin-bottom: 20rpx;
 }
 
+page .page_section radio-group {
+  display: flex;
+  align-items: center;
+}
+
+page .page_section radio-group label {
+  margin-right: 20rpx;
+}
+
+page .page_section .button-group {
+  display: inline-flex;
+}
+
+page .page_section .button-group button {
+  margin-right: 30rpx;
+  display: inline-flex;
+  align-items: center;
+}
+
+page .page_section .button-group button mp-icon {
+  height: 25px;
+  display: inline-flex;
+}
+
 page .page_section .input_wrap {
   border-radius: 8rpx;
   border: 1rpx solid #eee;

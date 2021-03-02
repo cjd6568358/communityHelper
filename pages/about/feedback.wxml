@@ -6,9 +6,27 @@
 	</view>
 </view>
 <view class="page_section">
+	<view class="title">我的反馈是</view>
+	<radio-group bindchange="radioChange">
+		<label class="radio">
+			<radio value="1" checked="{{agree}}" />同意
+		</label>
+		<label class="radio">
+			<radio value="0" />反对
+		</label>
+	</radio-group>
+	<view class="button-group">
+		<button bindtouchstart="touchStart" bindtouchend="touchEnd" type="primary" size="mini" plain="true">录音</button>
+		<button wx:if="{{voice.tempFilePath}}" type="primary" size="mini" plain="true" bindtap="playVoice">
+			<mp-icon icon="voice" color="green" size="{{25}}"></mp-icon>{{voiceTime}}s
+		</button>
+	</view>
+</view>
+<view class="page_section">
 	<view class="title">内容</view>
 	<view class="input_wrap">
-		<textarea show-confirm-bar="{{false}}" value="{{content}}" bindinput="bindInputChange" data-key="content" placeholder="请输入内容" auto-focus />
+		<textarea show-confirm-bar="{{false}}" value="{{content}}" bindinput="bindInputChange" data-key="content"
+			placeholder="请输入内容" auto-focus />
 		</view>
 </view>
 

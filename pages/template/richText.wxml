@@ -1,3 +1,4 @@
 <!--pages/tools/richText.wxml-->
 <!-- <rich-text nodes="{{content}}"></rich-text> -->
 <parser selectable use-cache html="{{content}}" />
+<view class="publish" bindtap="bindPublish"><text>我要</text><text>反馈</text></view>

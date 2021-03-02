@@ -1,4 +1,4 @@
-// pages/about/community.js
+// pages/ticket/list.js
 import { takeASTEngine } from '../../utils/util'
 const myApp = getApp()
 Page({
@@ -23,7 +23,7 @@ Page({
    */
   onReady: function () {
     this.setData({
-      list: myApp.globalData.communityInfo['community']
+      list: myApp.globalData.communityInfo['ticket']
     })
   },
   itemClick({ currentTarget: { dataset: { item } } }) {
