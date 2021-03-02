@@ -1,6 +1,6 @@
 // pages/about/feedback.js
 import { sendMsg, showToast } from '../../utils/util.js'
-import http from './http.js'
+// import http from './http.js'
 Page({
 
   /**
