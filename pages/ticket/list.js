@@ -23,7 +23,7 @@ Page({
    */
   onReady: function () {
     this.setData({
-      list: myApp.globalData.communityInfo['ticket']
+      list: (myApp.globalData.communityInfo['ticket'] || []).filter(item => item.display !== 0)
     })
   },
   itemClick({ currentTarget: { dataset: { item } } }) {
