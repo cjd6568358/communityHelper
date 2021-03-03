@@ -1,4 +1,4 @@
 <!--pages/tools/richText.wxml-->
 <!-- <rich-text nodes="{{content}}"></rich-text> -->
 <parser selectable use-cache html="{{content}}" />
-<view wx:if="feedback == 1 && !!status" class="publish" bindtap="bindPublish"><text>我要</text><text>投票</text></view>
+<view wx:if="{{feedback == 1 && !!status}}" class="publish" bindtap="bindPublish"><text>我要</text><text>投票</text></view>
