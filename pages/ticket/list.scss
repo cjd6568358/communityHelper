@@ -18,9 +18,14 @@ page {
     flex-direction: column;
 
     .item {
+      position: relative;
       padding: 20rpx 40rpx;
       width: 100%;
       border-bottom: 1rpx solid #eee;
+
+      &.invalid {
+        opacity: 0.3;
+      }
 
       .title {
         font-weight: 500;
@@ -29,6 +34,14 @@ page {
       .date {
         font-size: 24rpx;
         opacity: 0.3;
+      }
+
+      image {
+        position: absolute;
+        top: 0;
+        right: 40rpx;
+        height: 120rpx;
+        width: 160rpx;
       }
     }
   }

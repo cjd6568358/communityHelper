@@ -1,2 +1,15 @@
 <!--pages/ticket/list.wxml-->
-<text>pages/ticket/list.wxml</text>
+<page-meta>
+	<navigation-bar title="{{currCommunity}}" />
+</page-meta>
+<view class="header">
+	{{currCommunity}}小区投票专区
+</view>
+<view class="section">
+	<view class="item {{item.status ? '':'invalid'}}" wx:for="{{list}}" bindtap="itemClick" data-item="{{item}}"
+		wx:key="name">
+		<view class="title">{{item.name}}</view>
+		<view class="date">{{item.date}}</view>
+		<image wx:if="{{item.status === 0}}" src="./images/overtime.png"></image>
+	</view>
+</view>

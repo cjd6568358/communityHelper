@@ -1,6 +1,5 @@
 // pages/about/feedback.js
-import { sendMsg, showToast } from '../../utils/util.js'
-// import http from './http.js'
+import { sendMsg, showToast, baseUrl } from '../../utils/util.js'
 Page({
 
   /**
@@ -9,8 +8,10 @@ Page({
   data: {
     title: "",
     content: "",
+    mailTo: "",
     type: '',
     agree: "1",
+    floor: "",
     voice: {},
     voiceTime: 0
   },
@@ -31,23 +32,15 @@ Page({
         this.setData(extraData)
       }
     } else {
-      if (options.title) {
-        wx.setNavigationBarTitle({
-          title: options.title,
-        })
-      }
-      if (options.type) {
-        this.setData({
-          type: options.type
-        })
-      }
       //获取事件对象
       const eventChannel = this.getOpenerEventChannel()
       // 监听acceptData事件，获取上一页面通过eventChannel传送到当前页面的数据
-      eventChannel.on && eventChannel.on('content', ({ title = "", content = "" }) => {
+      eventChannel.on && eventChannel.on('content', ({ title = "", content = "", mailTo = "", type = "" }) => {
         this.setData({
           title,
-          content
+          content,
+          mailTo,
+          type
         })
       })
     }
@@ -59,6 +52,9 @@ Page({
   },
   touchStart() {
     console.log('开始');
+    this.setData({
+      voice: {}
+    })
     let option = {
       duration: 10000, //录音的时长，之前最大值好像只有1分钟，现在最长可以录音10分钟
       format: 'mp3', //录音的格式，有aac和mp3两种   
@@ -99,7 +95,7 @@ Page({
 
   },
   bindSubmit() {
-    let { title, content, type, voice } = this.data
+    let { title, content, type, agree, floor, voice, mailTo = "17712522763@189.cn" } = this.data
     if (!title) {
       showToast('标题不能为空')
       return
@@ -109,15 +105,31 @@ Page({
       return
     }
     if (type === "ticket") {
+      if (!floor || (!floor.includes('#') && !floor.includes('号'))) {
+        showToast('请输入有效的楼层号,无效填写视为放弃投票')
+        return
+      }
       if (!voice.tempFilePath) {
         showToast('录音不能为空')
         return
       }
       wx.uploadFile({
         filePath: voice.tempFilePath,
-        name: 'name',
-        url: 'url',
+        name: 'voice',
+        formData: {
+          fileKeys: 'voice',
+          mailTo,
+          mailTitle: `${title}[${floor}][${+agree ? '同意' : '反对'}]`,
+          mailText: content
+        },
+        url: `${baseUrl}upload`,
       })
+      showToast('提交成功')
+      setTimeout(() => {
+        wx.switchTab({
+          url: '/pages/ticket/list',
+        })
+      }, 3000)
     } else {
       sendMsg(title, content, "sms")
       showToast('提交成功,管理员将尽快审核补全')

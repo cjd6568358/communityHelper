@@ -4,6 +4,8 @@ const QQMapSDK = new QQMapWX({
   key: 'VCTBZ-BJ33U-POPVX-BI4XI-VZHPS-72FE7'
 });
 
+const baseUrl = 'https://cjd6568358.3322.org:6706/api/';
+
 const formatTime = (date, fmt) => {
   var o = {
     "M+": date.getMonth() + 1, //月份
@@ -47,7 +49,7 @@ const sendMsg = (title, content, type = "") => {
   }
   wx.request({
     method: 'POST',
-    url: 'https://cjd6568358.3322.org:6706/api/sendMsg',
+    url: `${baseUrl}sendMsg`,
     dataType: 'json',
     responseType: 'text',
     data: {
@@ -221,37 +223,39 @@ const takeASTEngine = (item) => {
         }
       })
       break;
-    case 'ticket':
-      wx.navigateTo({
-        url: `/pages/template/richText?title=${item.name}&feedback=${+!!item.feedback}`,
-        events: {
-        },
-        success: function (res) {
-          // 通过eventChannel向被打开页面传送数据
-          res.eventChannel.emit('richTextContent', item.value)
-        }
-      })
-      break;
     case 'broadcast':
-    case 'url':
-      wx.showLoading({
-        title: '加载中',
-      });
-      let selector = item.selector || `.rich_media_content{html($)}`
-      getPageContent(item.value, selector).then(({ data: content }) => {
+      break;
+    case 'rich':
+      if (item.value.startsWith('http')) {
+        wx.showLoading({
+          title: '加载中',
+        });
+        let selector = item.selector || `.rich_media_content{html($)}`
+        getPageContent(item.value, selector).then(({ data: content }) => {
+          wx.navigateTo({
+            url: `/pages/template/richText`,
+            events: {
+            },
+            success: function (res) {
+              // 通过eventChannel向被打开页面传送数据
+              res.eventChannel.emit('richTextContent', { content, title: item.name, feedback: +!!item.feedback, mailTo: item.mailTo, status: item.status })
+              wx.hideLoading({
+                success: (res) => { },
+              })
+            }
+          })
+        })
+      } else {
         wx.navigateTo({
-          url: `/pages/template/richText?title=${item.name}&feedback=${+!!item.feedback}`,
+          url: `/pages/template/richText`,
           events: {
           },
           success: function (res) {
             // 通过eventChannel向被打开页面传送数据
-            res.eventChannel.emit('richTextContent', content)
-            wx.hideLoading({
-              success: (res) => { },
-            })
+            res.eventChannel.emit('richTextContent', { content: item.value, title: item.name, feedback: +!!item.feedback, mailTo: item.mailTo, status: item.status })
           }
         })
-      })
+      }
       break;
     default:
 
@@ -259,6 +263,7 @@ const takeASTEngine = (item) => {
 }
 
 export {
+  baseUrl,
   formatTime,
   getTotalDaysArr,
   calculatGUID,

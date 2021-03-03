@@ -1,1 +1,47 @@
-/* pages/ticket/list.wxss */
+page {
+  padding: 0;
+}
+
+page .header {
+  font-size: 30rpx;
+  font-weight: 500;
+  padding: 30rpx 40rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
+  margin-bottom: 30rpx;
+}
+
+page .section {
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+page .section .item {
+  position: relative;
+  padding: 20rpx 40rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #eee;
+}
+
+page .section .item.invalid {
+  opacity: 0.3;
+}
+
+page .section .item .title {
+  font-weight: 500;
+}
+
+page .section .item .date {
+  font-size: 24rpx;
+  opacity: 0.3;
+}
+
+page .section .item image {
+  position: absolute;
+  top: 0;
+  right: 40rpx;
+  height: 120rpx;
+  width: 160rpx;
+}

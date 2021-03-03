@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/about/feedback",
     "pages/location/index",
     "pages/information/index",
     "pages/ticket/list",
     "pages/news/list",
+    "pages/about/feedback",
     "pages/activity/index",
     "pages/template/richText",
     "pages/template/default",

@@ -5,7 +5,10 @@
 		<input value="{{title}}" bindinput="bindInputChange" data-key="title" auto-focus="{{!title}}" placeholder="请输入标题" />
 	</view>
 </view>
-<view class="page_section">
+<view class="page_section" wx:if="type === 'ticket'">
+	<view class="input_wrap">
+		<input value="{{floor}}" bindinput="bindInputChange" data-key="floor" placeholder="请输入具体楼层号便于统计,例:52#102" />
+	</view>
 	<view class="title">我的反馈是</view>
 	<radio-group bindchange="radioChange">
 		<label class="radio">

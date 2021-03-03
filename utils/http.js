@@ -1,7 +1,6 @@
-import { sendMsg } from './util.js'
+import { sendMsg, baseUrl } from './util.js'
 let request = {};
 let methods = ['get', 'post', 'put', 'delete'];
-let baseUrl = 'https://cjd6568358.3322.org:6706/api/';
 methods.forEach((method) => {
   request[method] = (config) => {
     return new Promise((resolve, reject) => {

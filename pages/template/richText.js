@@ -5,8 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    title: "",
     content: '',
-    feedback: 0
+    feedback: 0,
+    status: 0,
+    mailTo: ""
   },
 
   /**
@@ -22,29 +25,27 @@ Page({
         this.setData(extraData)
       }
     } else {
-      wx.setNavigationBarTitle({
-        title: options.title,
-      })
-      this.setData({
-        feedback: +options.feedback
-      })
       //获取事件对象
       const eventChannel = this.getOpenerEventChannel()
       // 监听acceptData事件，获取上一页面通过eventChannel传送到当前页面的数据
-      eventChannel.on('richTextContent', (content) => {
+      eventChannel.on('richTextContent', ({ title = "", content, mailTo = "", feedback = 0, status = 0 }) => {
         this.setData({
-          title: options.title,
-          content
+          title,
+          content,
+          feedback,
+          mailTo,
+          status
         })
       })
     }
   },
   bindPublish() {
+    let { mailTo, title, feedback } = this.data
     wx.navigateTo({
-      url: '/pages/about/feedback?type=ticket',
+      url: '/pages/about/feedback',
       success: function (res) {
         // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('content', { title: this.data.title })
+        res.eventChannel.emit('content', { title, mailTo, type: feedback ? 'ticket' : "" })
       }
     })
   },

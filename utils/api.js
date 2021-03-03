@@ -1,7 +1,5 @@
 import http from './http.js'
 
-const url = `communityHelper`
-
 let getGlobalData = () => {
   return getApp().globalData
 }
