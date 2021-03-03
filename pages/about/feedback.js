@@ -13,7 +13,9 @@ Page({
     agree: "1",
     floor: "",
     voice: {},
-    voiceTime: 0
+    voiceTime: 0,
+    contentPlaceholder: "请输入内容",
+    titleDisabled: 0
   },
 
   /**
@@ -35,12 +37,14 @@ Page({
       //获取事件对象
       const eventChannel = this.getOpenerEventChannel()
       // 监听acceptData事件，获取上一页面通过eventChannel传送到当前页面的数据
-      eventChannel.on && eventChannel.on('content', ({ title = "", content = "", mailTo = "", type = "" }) => {
+      eventChannel.on && eventChannel.on('content', ({ titleDisabled = 0, contentPlaceholder = "请输入内容", title = "", content = "", mailTo = "", type = "" }) => {
         this.setData({
           title,
           content,
           mailTo,
-          type
+          type,
+          contentPlaceholder,
+          titleDisabled
         })
       })
     }
