@@ -45,7 +45,7 @@ Page({
       url: '/pages/about/feedback',
       success: function (res) {
         // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('content', { titleDisabled: 1, contentPlaceholder: "这里是录音示例:我是XX小区15号201梁某某,对于XX改造,我的看法是同意/反对,理由是...", title, mailTo, type: feedback ? 'ticket' : "" })
+        res.eventChannel.emit('content', { titleDisabled: 1, contentPlaceholder: "这里是录音示例:我是XX小区15号201业主梁某某,对于XX改造,我的看法是同意/反对,理由是...", title, mailTo, type: feedback ? 'ticket' : "" })
       }
     })
   },
