@@ -99,13 +99,9 @@ Page({
 
   },
   bindSubmit() {
-    let { title, content, type, agree, floor, voice, mailTo = "17712522763@189.cn" } = this.data
+    let { title, content = "", type, agree, floor, voice, mailTo = "17712522763@189.cn" } = this.data
     if (!title) {
       showToast('标题不能为空')
-      return
-    }
-    if (!content) {
-      showToast('内容不能为空')
       return
     }
     if (type === "ticket") {
@@ -135,6 +131,10 @@ Page({
         })
       }, 3000)
     } else {
+      if (!content) {
+        showToast('内容不能为空')
+        return
+      }
       sendMsg(title, content, "sms")
       showToast('提交成功,管理员将尽快审核补全')
       setTimeout(() => {
