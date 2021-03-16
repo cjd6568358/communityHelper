@@ -3,7 +3,7 @@
 	<navigation-bar title="{{currCommunity}}" />
 </page-meta>
 <view class="header">
-	{{currCommunity}}小区投票专区
+	{{currCommunity}}小区意见公告专区
 </view>
 <view class="section">
 	<view class="item {{item.status ? '':'invalid'}}" wx:for="{{list}}" bindtap="itemClick" data-item="{{item}}"
